@@ -4,53 +4,61 @@
   <meta charset="UTF-8">
   <title>FrediTech Fantasy Premium League EPL</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    html, body {
-      height: 100%;
-      font-family: Arial, sans-serif;
-      scroll-behavior: smooth;
-      background-color: #f5f5f5;
-    }
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+  background-color: #f5f5f5;
+  overflow: hidden;
+}
 
-    /* Header Section */
-    .header {
-      height: 100vh;
-      background: linear-gradient(to bottom right, #570707, #101010);
-      color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      text-align: center;
-    }
+/* Header Section - Full Screen Dashboard */
+.header {
+  height: 100vh;
+  background: linear-gradient(to bottom right, #570707, #101010);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  text-align: center;
+  overflow-y: auto;
+}
 
-    .logo {
-      width: 180px;
-      animation: bounce 2s infinite;
-    }
+.logo {
+  width: 180px;
+  animation: bounce 2s infinite;
+  margin-top: 20px;
+}
 
-    .header h1 {
-      margin-top: 20px;
-      font-size: 2.5rem;
-    }
+.header h1 {
+  margin-top: 20px;
+  font-size: 2.5rem;
+}
 
-    .button-container {
-      margin-top: 30px;
-    }
+/* Button Container - Scrollable with Big Circle Buttons */
+.button-container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+}
 
+/* Big Circular Buttons */
 .open-btn {
   width: 120px;
   height: 120px;
-  margin: 15px;
   font-size: 16px;
   font-weight: bold;
-  text-align: center;
   border: none;
   border-radius: 50%;
   background-color: #e20e0e;
@@ -64,66 +72,19 @@
   transform: scale(1.05);
 }
 
+/* Bounce Animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-20px); }
+  60% { transform: translateY(-10px); }
+}
 
-    /* Teams Section */
-    .teams-section {
-      min-height: 100vh;
-      padding: 50px 20px;
-      text-align: center;
-      background-color: #fff;
-    }
-
-    .teams-section h2 {
-      margin-bottom: 30px;
-      font-size: 2rem;
-      color: #222;
-    }
-
-    .team-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .team-btn {
-      width: 80px;
-      height: 80px;
-      border: none;
-      border-radius: 50%;
-      background-color: #fff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
-
-    .team-btn:hover {
-      transform: scale(1.1);
-    }
-
-    .team-logo {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-    }
-
-    /* Footer Links */
-    .footer-links {
-      margin-top: 40px;
-    }
-
-    /* Animations */
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-20px); }
-      60% { transform: translateY(-10px); }
-    }
-
-    @media screen and (max-width: 600px) {
-      .header h1 {
-        font-size: 1.8rem;
-      }
-    }
+/* Responsive Text */
+@media screen and (max-width: 600px) {
+  .header h1 {
+    font-size: 1.8rem;
+  }
+}
   </style>
 </head>
 <body>
