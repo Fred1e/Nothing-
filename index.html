@@ -2,42 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>FrediTech Fantasy Premium League EPL Famous</title>
+  <title>FrediTech Fantasy Premium League EPL</title>
   <style>
-    /* Base Styles */
-    body {
-      background-color: #f5f5f5;
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      text-align: center;
+      box-sizing: border-box;
     }
-    h1, h2 {
-      margin: 10px 0;
+
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+      background-color: #f5f5f5;
     }
+
     /* Header Section */
     .header {
+      height: 100vh;
+      background: linear-gradient(to bottom right, #570707, #101010);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       padding: 20px;
-      animation: fadeIn 2s;
+      text-align: center;
     }
+
     .logo {
-      width: 200px;
-      height: auto;
-      margin: 0 auto;
-      display: block;
+      width: 180px;
       animation: bounce 2s infinite;
     }
-    .site-title {
-      font-size: 28px;
-      color: #e20e0e;
-      margin-top: 10px;
+
+    .header h1 {
+      margin-top: 20px;
+      font-size: 2.5rem;
     }
-    /* Button Styles */
+
     .button-container {
-      margin: 20px;
+      margin-top: 30px;
     }
+
     .open-btn {
-      padding: 15px 30px;
+      padding: 12px 25px;
       margin: 10px;
       font-size: 16px;
       border: none;
@@ -45,203 +53,187 @@
       background-color: #e20e0e;
       color: #fff;
       cursor: pointer;
-      animation: slideIn 1s ease-out;
       transition: background-color 0.3s;
     }
+
     .open-btn:hover {
       background-color: #a10a0a;
     }
+
     /* Teams Section */
     .teams-section {
-      margin: 30px;
-      animation: fadeIn 2s;
+      min-height: 100vh;
+      padding: 50px 20px;
+      text-align: center;
+      background-color: #fff;
     }
-    .teams-grid {
+
+    .teams-section h2 {
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: #222;
+    }
+
+    .team-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      gap: 20px;
     }
-    .team-card {
-      background: #fff;
-      border-radius: 10px;
+
+    .team-btn {
+      width: 80px;
+      height: 80px;
+      border: none;
+      border-radius: 50%;
+      background-color: #fff;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      margin: 10px;
-      padding: 10px;
-      width: 120px;
       cursor: pointer;
       transition: transform 0.3s;
-      animation: slideIn 1s ease-out;
     }
-    .team-card:hover {
-      transform: scale(1.05);
+
+    .team-btn:hover {
+      transform: scale(1.1);
     }
+
     .team-logo {
-      width: 60px;
-      height: 60px;
-      margin: 0 auto;
-      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
     }
-    .team-desc {
-      font-size: 12px;
-      margin-top: 5px;
-      color: #333;
+
+    /* Footer Links */
+    .footer-links {
+      margin-top: 40px;
     }
-    /* Footer Official Links */
-    .official-links {
-      margin: 30px;
-      animation: fadeIn 2s;
-    }
-    .official-links .open-btn {
-      margin: 5px;
-      font-size: 14px;
-    }
+
     /* Animations */
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
     @keyframes bounce {
       0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
       40% { transform: translateY(-20px); }
       60% { transform: translateY(-10px); }
     }
-    @keyframes slideIn {
-      from {transform: translateX(-100%); opacity: 0;}
-      to {transform: translateX(0); opacity: 1;}
+
+    @media screen and (max-width: 600px) {
+      .header h1 {
+        font-size: 1.8rem;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Header Section -->
+
+  <!-- Fullscreen Header -->
   <div class="header">
     <img src="https://upload.wikimedia.org/wikipedia/en/f/f2/Premier_League_Logo.svg" alt="EPL Logo" class="logo">
-    <div class="site-title">FrediTech Fantasy Premium League EPL Famous</div>
+    <h1>FrediTech Fantasy Premium League EPL</h1>
+
     <div class="button-container">
       <button class="open-btn" onclick="window.location.href='Swahili.html'">Swahili</button>
       <button class="open-btn" onclick="window.location.href='English.html'">English</button>
-      <button class="open-btn" onclick="window.location.href='EPLAbout.html'">Open EPL About</button>
+      <button class="open-btn" onclick="openEPLAbout()">EPL About</button>
     </div>
   </div>
-  <hr>
 
-  <!-- Teams Section -->
+  <!-- Scrollable Teams Section -->
   <div class="teams-section">
-    <h2>EPL Teams & Official Links</h2>
-    <div class="teams-grid">
-      <!-- Arsenal -->
-      <div class="team-card" onclick="window.open('https://www.arsenal.com', '_blank')">
-        <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg" alt="Arsenal" class="team-logo">
-        <div class="team-desc">Visit Arsenal Official Website</div>
-      </div>
-      <!-- Aston Villa -->
-      <div class="team-card" onclick="window.open('https://www.avfc.co.uk', '_blank')">
-        <img src="https://upload.wikimedia.org/wikipedia/en/f/f9/Aston_Villa_FC.svg" alt="Aston Villa" class="team-logo">
-        <div class="team-desc">Visit Aston Villa Official Website</div>
-      </div>
-      <!-- Bournemouth -->
-      <div class="team-card" onclick="window.open('https://www.afcb.co.uk', '_blank')">
-        <img src="https://upload.wikimedia.org/wikipedia/en/7/7e/AFC_Bournemouth.svg" alt="Bournemouth" class="team-logo">
-        <div class="team-desc">Visit AFC Bournemouth</div>
-      </div>
-      <!-- Brentford -->
-      <div class="team-card" onclick="window.open('https://www.brentfordfc.com', '_blank')">
-        <img src="https://upload.wikimedia.org/wikipedia/en/2/2d/Brentford_FC.svg" alt="Brentford" class="team-logo">
-        <div class="team-desc">Visit Brentford FC</div>
-      </div>
-      <!-- Brighton & Hove Albion -->
-      <div class="team-card" onclick="window.open('https://www.brightonandhovealbion.com', '_blank')">
-        <img src="https://upload.wikimedia.org/wikipedia/en/f/fd/Brighton_%26_Hove_Albion_logo.svg" alt="Brighton" class="team-logo">
-        <div class="team-desc">Visit Brighton & Hove Albion</div>
-      </div>
-      <!-- Chelsea -->
-      <div class="team-card" onclick="window.open('https://www.chelseafc.com', '_blank')">
-        <img src="https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg" alt="Chelsea" class="team-logo">
-        <div class="team-desc">Visit Chelsea FC</div>
-      </div>
-      <!-- Crystal Palace -->
-      <div class="team-card" onclick="window.open('https://www.cpfc.co.uk', '_blank')">
-        <img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Crystal_Palace_FC.svg" alt="Crystal Palace" class="team-logo">
-        <div class="team-desc">Visit Crystal Palace</div>
-      </div>
-      <!-- Everton -->
-      <div class="team-card" onclick="window.open('https://www.evertonfc.com', '_blank')">
-        <img src="https://upload.wikimedia.org/wikipedia/en/7/7c/Everton_FC_logo.svg" alt="Everton" class="team-logo">
-        <div class="team-desc">Visit Everton FC</div>
-      </div>
-      <!-- Fulham -->
-      <div class="team-card" onclick="window.open('https://www.fulhamfc.com', '_blank')">
-        <img src="https://upload.wikimedia.org/wikipedia/en/e/e3/Fulham_FC_%28logo%29.svg" alt="Fulham" class="team-logo">
-        <div class="team-desc">Visit Fulham FC</div>
-      </div>
-      <!-- Liverpool -->
-      <div class="team-card" onclick="window.open('https://www.liverpoolfc.com', '_blank')">
-        <img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg" alt="Liverpool" class="team-logo">
-        <div class="team-desc">Visit Liverpool FC</div>
-      </div>
-      <!-- Luton Town -->
-      <div class="team-card" onclick="window.open('https://www.lutontown.co.uk', '_blank')">
-        <img src="https://upload.wikimedia.org/wikipedia/en/0/0d/Luton_Town_FC.svg" alt="Luton Town" class="team-logo">
-        <div class="team-desc">Visit Luton Town FC</div>
-      </div>
-      <!-- Manchester City -->
-      <div class="team-card" onclick="window.open('https://www.mancity.com', '_blank')">
-        <img src="https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg" alt="Manchester City" class="team-logo">
-        <div class="team-desc">Visit Manchester City FC</div>
-      </div>
-      <!-- Manchester United -->
-      <div class="team-card" onclick="window.open('https://www.manutd.com', '_blank')">
-        <img src="https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg" alt="Manchester United" class="team-logo">
-        <div class="team-desc">Visit Manchester United FC</div>
-      </div>
-      <!-- Newcastle United -->
-      <div class="team-card" onclick="window.open('https://www.nufc.co.uk', '_blank')">
-        <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Newcastle_United_FC_logo.svg" alt="Newcastle United" class="team-logo">
-        <div class="team-desc">Visit Newcastle United FC</div>
-      </div>
-      <!-- Nottingham Forest -->
-      <div class="team-card" onclick="window.open('https://www.nottinghamforest.co.uk', '_blank')">
-        <img src="https://upload.wikimedia.org/wikipedia/en/c/c4/Nottingham_Forest_FC.svg" alt="Nottingham Forest" class="team-logo">
-        <div class="team-desc">Visit Nottingham Forest FC</div>
-      </div>
-      <!-- Southampton -->
-      <div class="team-card" onclick="window.open('https://www.southamptonfc.com', '_blank')">
-        <img src="https://upload.wikimedia.org/wikipedia/en/c/c9/Southampton_FC.svg" alt="Southampton" class="team-logo">
-        <div class="team-desc">Visit Southampton FC</div>
-      </div>
-      <!-- Tottenham Hotspur -->
-      <div class="team-card" onclick="window.open('https://www.tottenhamhotspur.com', '_blank')">
-        <img src="https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg" alt="Tottenham" class="team-logo">
-        <div class="team-desc">Visit Tottenham Hotspur</div>
-      </div>
-      <!-- West Ham United -->
-      <div class="team-card" onclick="window.open('https://www.whufc.com', '_blank')">
-        <img src="https://upload.wikimedia.org/wikipedia/en/c/c2/West_Ham_United_FC.svg" alt="West Ham" class="team-logo">
-        <div class="team-desc">Visit West Ham United FC</div>
-      </div>
-      <!-- Wolverhampton Wanderers -->
-      <div class="team-card" onclick="window.open('https://www.wolves.co.uk', '_blank')">
-        <img src="https://upload.wikimedia.org/wikipedia/en/f/fd/Wolverhampton_Wanderers.svg" alt="Wolves" class="team-logo">
-        <div class="team-desc">Visit Wolverhampton Wanderers FC</div>
-      </div>
-      <!-- Leicester City -->
-      <div class="team-card" onclick="window.open('https://www.lcfc.com', '_blank')">
-        <img src="https://upload.wikimedia.org/wikipedia/en/6/63/Leicester_City_crest.svg" alt="Leicester City" class="team-logo">
-        <div class="team-desc">Visit Leicester City FC</div>
-      </div>
+    <h2>Official EPL Team Open your favorite team</h2>
+
+    <div class="team-grid">
+  <!-- 1 -->
+  <button class="team-btn" title="Manchester United" onclick="window.open('https://www.manutd.com')">
+    <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg" />
+  </button>
+  <!-- 2 -->
+  <button class="team-btn" title="Manchester City" onclick="window.open('https://www.mancity.com')">
+    <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg" />
+  </button>
+  <!-- 3 -->
+  <button class="team-btn" title="Arsenal" onclick="window.open('https://www.arsenal.com')">
+    <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg" />
+  </button>
+  <!-- 4 -->
+  <button class="team-btn" title="Chelsea" onclick="window.open('https://www.chelseafc.com')">
+    <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg" />
+  </button>
+  <!-- 5 -->
+  <button class="team-btn" title="Liverpool" onclick="window.open('https://www.liverpoolfc.com')">
+    <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg" />
+  </button>
+  <!-- 6 -->
+  <button class="team-btn" title="Tottenham Hotspur" onclick="window.open('https://www.tottenhamhotspur.com')">
+    <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg" />
+  </button>
+  <!-- 7 -->
+  <button class="team-btn" title="Newcastle United" onclick="window.open('https://www.nufc.co.uk')">
+    <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/5/56/Newcastle_United_Logo.svg" />
+  </button>
+  <!-- 8 -->
+  <button class="team-btn" title="Aston Villa" onclick="window.open('https://www.avfc.co.uk')">
+    <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/f/f9/Aston_Villa_logo.svg" />
+  </button>
+  <!-- 9 -->
+  <button class="team-btn" title="Brighton & Hove Albion" onclick="window.open('https://www.brightonandhovealbion.com')">
+    <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/f/fd/Brighton_%26_Hove_Albion_logo.svg" />
+  </button>
+  <!-- 10 -->
+  <button class="team-btn" title="West Ham United" onclick="window.open('https://www.whufc.com')">
+    <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/c/c2/West_Ham_United_FC_logo.svg" />
+  </button>
+  <!-- 11 -->
+  <button class="team-btn" title="Wolverhampton Wanderers" onclick="window.open('https://www.wolves.co.uk')">
+    <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/f/fc/Wolverhampton_Wanderers.svg" />
+  </button>
+  <!-- 12 -->
+  <button class="team-btn" title="Crystal Palace" onclick="window.open('https://www.cpfc.co.uk')">
+    <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/0/0c/Crystal_Palace_FC_logo.svg" />
+  </button>
+  <!-- 13 -->
+  <button class="team-btn" title="Fulham" onclick="window.open('https://www.fulhamfc.com')">
+    <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/e/eb/Fulham_FC_%28shield%29_logo.svg" />
+  </button>
+  <!-- 14 -->
+  <button class="team-btn" title="Brentford" onclick="window.open('https://www.brentfordfc.com')">
+    <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/2/2a/Brentford_FC_crest.svg" />
+  </button>
+  <!-- 15 -->
+  <button class="team-btn" title="Everton" onclick="window.open('https://www.evertonfc.com')">
+    <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/7/7c/Everton_FC_logo.svg" />
+  </button>
+  <!-- 16 -->
+  <button class="team-btn" title="Nottingham Forest" onclick="window.open('https://www.nottinghamforest.co.uk')">
+    <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/e/e5/Nottingham_Forest_F.C._logo.svg" />
+  </button>
+  <!-- 17 -->
+  <button class="team-btn" title="AFC Bournemouth" onclick="window.open('https://www.afcb.co.uk')">
+    <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/e/e5/AFC_Bournemouth.svg" />
+  </button>
+  <!-- 18 -->
+  <button class="team-btn" title="Leicester City" onclick="window.open('https://www.lcfc.com')">
+    <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/6/63/Leicester02.png" />
+  </button>
+  <!-- 19 -->
+  <button class="team-btn" title="Ipswich Town" onclick="window.open('https://www.itfc.co.uk')">
+    <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/4/43/Ipswich_Town.svg" />
+  </button>
+  <!-- 20 -->
+  <button class="team-btn" title="Southampton" onclick="window.open('https://www.southamptonfc.com')">
+    <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/c/c9/FC_Southampton.svg" />
+  </button>
+</div>
+
+
+    <div class="footer-links">
+      <button class="open-btn" onclick="window.open('https://www.premierleague.com')">Visit EPL Official Website</button>
+      <button class="open-btn" onclick="window.open('https://play.google.com/store/apps/details?id=com.pl.premierleague')">Download PL App (Android)</button>
+      <button class="open-btn" onclick="window.open('https://apps.apple.com/app/premier-league-official-app/id1138895159')">Download PL App (iOS)</button>
     </div>
   </div>
 
-  <!-- Official EPL Links Section -->
-  <div class="official-links">
-    <button class="open-btn" onclick="window.open('https://www.premierleague.com', '_blank')">
-      EPL Official Website<br><small>Follow news, fixtures & standings</small>
-    </button>
-    <button class="open-btn" onclick="window.open('https://play.google.com/store/apps/details?id=com.pl.premierleague', '_blank')">
-      Download PL App (Android)<br><small>Get live match updates</small>
-    </button>
-    <button class="open-btn" onclick="window.open('https://apps.apple.com/app/premier-league-official-app/id1138895159', '_blank')">
-      Download PL App (iOS)<br><small>Experience the action on your iPhone</small>
-    </button>
-  </div>
+  <script>
+    function openEPLAbout() {
+      window.location.href = 'EPLAbout.html';
+    }
+  </script>
 </body>
 </html>
